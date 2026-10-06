@@ -1,0 +1,842 @@
+@import "tailwindcss";
+
+/* * {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+ */
+
+
+ 
+
+/* =========================================================
+   ERP DOST — PREMIUM REFERENCE THEME
+   Styling only — no functionality changes
+========================================================= */
+
+:root {
+  --erp-navy: #101c3a;
+  --erp-navy-dark: #071333;
+  --erp-purple: #5b3df5;
+  --erp-violet: #7c3aed;
+  --erp-blue: #347bff;
+
+  --erp-bg: #f5f7ff;
+  --erp-card: #ffffff;
+
+  --erp-text: #17213d;
+  --erp-muted: #78829b;
+  --erp-border: #e8eafa;
+
+  --erp-mint: #dff8ef;
+  --erp-lavender: #eee9ff;
+  --erp-peach: #fff0e3;
+  --erp-sky: #e6f2ff;
+  --erp-pink: #ffeaf3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(124, 58, 237, 0.06),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(52, 123, 255, 0.07),
+      transparent 25%
+    ),
+    #f5f7ff;
+
+  color: var(--erp-text);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+aside {
+  background:
+    linear-gradient(
+      180deg,
+      #101c3a 0%,
+      #111c43 48%,
+      #17255a 100%
+    ) !important;
+
+  border-right: 0 !important;
+
+  box-shadow:
+    12px 0 40px rgba(16, 28, 58, 0.13),
+    inset -1px 0 rgba(255, 255, 255, 0.05);
+
+  overflow: hidden;
+}
+
+
+/* Decorative glow */
+
+aside::before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  top: -100px;
+  right: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.45),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+/* Decorative bottom glow */
+
+aside::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  bottom: -140px;
+  left: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(52, 123, 255, 0.3),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+/* Sidebar logo area */
+
+aside > div:first-child {
+  position: relative;
+  z-index: 5;
+
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* ERP logo */
+
+aside > div:first-child a > div:first-child {
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #347bff
+    ) !important;
+
+  box-shadow:
+    0 8px 24px rgba(91, 61, 245, 0.4);
+}
+
+
+/* Logo text */
+
+aside > div:first-child p:first-child {
+  color: #ffffff !important;
+}
+
+aside > div:first-child p:last-child {
+  color: rgba(255, 255, 255, 0.48) !important;
+}
+
+
+/* Sidebar scroll area */
+
+aside > div:nth-child(2) {
+  position: relative;
+  z-index: 5;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.18) transparent;
+}
+
+
+/* =========================================================
+   SIDEBAR MAIN ITEMS
+========================================================= */
+
+aside nav > a,
+aside nav > div > button,
+aside nav > div > a {
+  color: rgba(255, 255, 255, 0.68) !important;
+
+  border-radius: 13px !important;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+aside nav > a:hover,
+aside nav > div > button:hover,
+aside nav > div > a:hover {
+  color: #ffffff !important;
+
+  background:
+    rgba(255, 255, 255, 0.075) !important;
+
+  transform: translateX(2px);
+}
+
+
+/* Active sidebar */
+
+aside nav > a.font-semibold,
+aside nav > div > button.font-semibold {
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.95),
+      rgba(52, 123, 255, 0.85)
+    ) !important;
+
+  box-shadow:
+    0 8px 22px rgba(52, 72, 180, 0.28),
+    inset 0 1px rgba(255,255,255,.15);
+}
+
+
+/* Main icons */
+
+aside nav svg {
+  transition: transform 0.2s ease;
+}
+
+aside nav > a:hover svg,
+aside nav > div > button:hover svg {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   SIDEBAR CHILDREN
+========================================================= */
+
+aside nav div.border-l {
+  border-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+
+/* Child links */
+
+aside nav div.border-l a {
+  color: rgba(255, 255, 255, 0.53) !important;
+
+  border-radius: 9px !important;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    padding-left .2s ease;
+}
+
+
+aside nav div.border-l a:hover {
+  color: #ffffff !important;
+
+  background:
+    rgba(255, 255, 255, 0.065) !important;
+
+  padding-left: 16px !important;
+}
+
+
+/* Active child */
+
+aside nav div.border-l a.font-semibold {
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(124, 58, 237, 0.28),
+      rgba(52, 123, 255, 0.12)
+    ) !important;
+
+  box-shadow:
+    inset 3px 0 #8b7cff;
+}
+
+
+/* Nested menu buttons */
+
+aside nav div.border-l button {
+  color: rgba(255,255,255,.55) !important;
+}
+
+aside nav div.border-l button:hover {
+  color: #ffffff !important;
+
+  background:
+    rgba(255,255,255,.06) !important;
+}
+
+
+/* =========================================================
+   PROJECT NAVIGATION
+========================================================= */
+
+aside .mt-2 button {
+  color: rgba(255,255,255,.65);
+}
+
+aside .mt-2 button:hover {
+  color: #ffffff;
+}
+
+
+/* Project team circles */
+
+aside .bg-slate-900 {
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #347bff
+    ) !important;
+
+  box-shadow:
+    0 4px 12px rgba(91,61,245,.25);
+}
+
+
+/* Project cards */
+
+aside .bg-slate-100 {
+  background:
+    rgba(255,255,255,.08) !important;
+
+  color: rgba(255,255,255,.7) !important;
+}
+
+
+/* =========================================================
+   SIDEBAR POPUP
+========================================================= */
+
+aside .shadow-xl {
+  background: #ffffff !important;
+
+  box-shadow:
+    0 20px 50px rgba(15,23,42,.25) !important;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+header.fixed {
+  background:
+    rgba(255, 255, 255, 0.88) !important;
+
+  border-bottom:
+    1px solid rgba(91, 61, 245, 0.08) !important;
+
+  box-shadow:
+    0 8px 35px rgba(30, 41, 80, 0.07);
+
+  backdrop-filter: blur(20px);
+}
+
+
+/* Topbar decorative gradient line */
+
+header.fixed::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #5b3df5,
+      #347bff,
+      #06b6d4
+    );
+}
+
+
+/* Topbar search */
+
+header input {
+  color: #17213d !important;
+}
+
+header .bg-slate-50 {
+  background: #f4f5fb !important;
+}
+
+header .bg-slate-50:focus-within {
+  background: #ffffff !important;
+}
+
+
+/* Topbar buttons */
+
+header button {
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+header button:hover {
+  color: #5b3df5 !important;
+  background: #f1efff !important;
+}
+
+header button:hover svg {
+  color: #5b3df5;
+}
+
+
+/* Profile */
+
+header .rounded-full.bg-slate-100 {
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #347bff
+    ) !important;
+
+  color: white !important;
+
+  box-shadow:
+    0 6px 18px rgba(91,61,245,.22);
+}
+
+
+/* Notification */
+
+header .bg-indigo-600 {
+  background: #7c3aed !important;
+}
+
+
+/* =========================================================
+   DASHBOARD PAGE
+========================================================= */
+
+main {
+  background: transparent;
+}
+
+
+/* Dashboard heading */
+
+main h1 {
+  color: #17213d !important;
+}
+
+
+/* Description */
+
+main > header p {
+  color: #7c86a0 !important;
+}
+
+
+/* =========================================================
+   FILTER PILLS
+========================================================= */
+
+main .bg-indigo-600 {
+  background:
+    linear-gradient(
+      135deg,
+      #5b3df5,
+      #7c3aed
+    ) !important;
+
+  box-shadow:
+    0 8px 20px rgba(91,61,245,.2);
+}
+
+main .border-indigo-600 {
+  border-color: #5b3df5 !important;
+}
+
+main button:hover {
+  transition: all .2s ease;
+}
+
+
+/* =========================================================
+   ALL DASHBOARD CARDS
+========================================================= */
+
+main section,
+main article {
+  border-color: #e7e9f4 !important;
+
+  box-shadow:
+    0 10px 30px rgba(36, 45, 80, 0.055) !important;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+
+main section:hover,
+main article:hover {
+  border-color: rgba(91,61,245,.16) !important;
+
+  box-shadow:
+    0 16px 40px rgba(36,45,80,.09) !important;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+main article {
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 22px !important;
+}
+
+
+/* Decorative top glow */
+
+main article::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  right: -35px;
+  top: -40px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(124,58,237,.08);
+}
+
+
+/* Card icon */
+
+main article .bg-indigo-50 {
+  background:
+    linear-gradient(
+      135deg,
+      #eee9ff,
+      #e4edff
+    ) !important;
+
+  color: #5b3df5 !important;
+}
+
+
+/* =========================================================
+   DIFFERENT PASTEL ACCENTS
+========================================================= */
+
+/* Summary card 1 */
+
+main article:nth-child(1) .bg-indigo-50 {
+  background: #e3f7ef !important;
+  color: #159570 !important;
+}
+
+/* Summary card 2 */
+
+main article:nth-child(2) .bg-indigo-50 {
+  background: #e9edff !important;
+  color: #4f46e5 !important;
+}
+
+/* Summary card 3 */
+
+main article:nth-child(3) .bg-indigo-50 {
+  background: #fff0e3 !important;
+  color: #e8793f !important;
+}
+
+/* Summary card 4 */
+
+main article:nth-child(4) .bg-indigo-50 {
+  background: #ffeaf3 !important;
+  color: #db4d86 !important;
+}
+
+/* Summary card 5 */
+
+main article:nth-child(5) .bg-indigo-50 {
+  background: #e8f2ff !important;
+  color: #347bff !important;
+}
+
+/* Summary card 6 */
+
+main article:nth-child(6) .bg-indigo-50 {
+  background: #eee9ff !important;
+  color: #7c3aed !important;
+}
+
+/* Summary card 7 */
+
+main article:nth-child(7) .bg-indigo-50 {
+  background: #e5f8f5 !important;
+  color: #089b8a !important;
+}
+
+/* Summary card 8 */
+
+main article:nth-child(8) .bg-indigo-50 {
+  background: #fff1e5 !important;
+  color: #ed7a38 !important;
+}
+
+
+/* =========================================================
+   STATISTICS / CHART AREAS
+========================================================= */
+
+main .bg-slate-50\/70 {
+  background:
+    linear-gradient(
+      145deg,
+      #f5f6ff,
+      #f8f9ff
+    ) !important;
+}
+
+
+/* Chart icon */
+
+main .bg-white.text-indigo-600 {
+  color: #5b3df5 !important;
+
+  box-shadow:
+    0 10px 25px rgba(91,61,245,.12) !important;
+}
+
+
+/* Chart grid */
+
+main .border-dashed {
+  border-color: #e4e7f2 !important;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+main table thead tr {
+  background:
+    linear-gradient(
+      90deg,
+      #f8f8ff,
+      #f7f9ff
+    ) !important;
+}
+
+main th {
+  color: #8a91a8 !important;
+}
+
+main td {
+  border-color: #edf0f7 !important;
+}
+
+
+/* =========================================================
+   RECENT ACTIVITY TABS
+========================================================= */
+
+main .bg-slate-50 {
+  background: #f3f4fb !important;
+}
+
+
+main .bg-indigo-600.text-white {
+  background:
+    linear-gradient(
+      135deg,
+      #5b3df5,
+      #7c3aed
+    ) !important;
+}
+
+
+/* =========================================================
+   CALENDAR
+========================================================= */
+
+main .min-w-\[650px\] {
+  border-color: #e5e8f2 !important;
+}
+
+main .min-w-\[650px\] .bg-slate-50 {
+  background:
+    #f6f7fc !important;
+}
+
+main .min-w-\[650px\] .bg-indigo-600 {
+  background:
+    linear-gradient(
+      135deg,
+      #5b3df5,
+      #7c3aed
+    ) !important;
+}
+
+
+/* =========================================================
+   TODO ADD BUTTON
+========================================================= */
+
+main button.bg-indigo-600 {
+  background:
+    linear-gradient(
+      135deg,
+      #5b3df5,
+      #7c3aed
+    ) !important;
+
+  box-shadow:
+    0 8px 20px rgba(91,61,245,.2);
+}
+
+
+/* =========================================================
+   FLOWER / ORNAMENTAL DECORATIONS
+========================================================= */
+
+.erp-decoration {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+aside::-webkit-scrollbar {
+  width: 5px;
+}
+
+aside::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.15);
+  border-radius: 999px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.25);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1023px) {
+  header.fixed {
+    left: 0 !important;
+  }
+
+  aside {
+    box-shadow:
+      10px 0 40px rgba(16,28,58,.25);
+  }
+}
+
+
+/* =========================================================
+   SMOOTH UI
+========================================================= */
+
+button,
+a,
+article,
+section {
+  -webkit-tap-highlight-color: transparent;
+}
