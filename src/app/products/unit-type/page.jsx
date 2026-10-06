@@ -1,6 +1,6 @@
 "use client";
 
-import MasterList from "@/components/master-data/MasterList";
+import MasterList from "@/src/components/master-data/MasterList";
 
 export default function UnitTypePage() {
   return (
